@@ -5,7 +5,7 @@ import { FaRegMoon } from "react-icons/fa";
 const Navbar = ({ scrollToSection }) => {
   const { theme, toggleTheme } = useThemeContext();
   return (
-   <nav className="fixed top-0 left-0 w-full bg-gray-800 text-white py-4 shadow-md z-50 flex items-center justify-between px-10">
+   <nav className="fixed top-0 left-0 w-screen bg-gray-800 text-white py-4 shadow-md z-50 flex items-center flex-wrap justify-between px-10">
   <h1 className="text-2xl font-bold">Portfolio</h1>
   <ul className="flex space-x-6 relative top-4 ">
     <li>

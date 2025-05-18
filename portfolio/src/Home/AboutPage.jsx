@@ -11,7 +11,7 @@ const AboutPage = () => {
     <div className={`w-screen h-screen ${theme==='light' ? 'bg-white' : 'bg-black'} pt-20 flex flex-col justify-center`}>
  <h1 className={`text-3xl font-bold text-center ${theme==='light' ? 'text-black' : 'text-white'} dark:text-white relative top-25`}>
     About me
-  </h1><div className={`w-full h-full ml-10 flex justify-center items-center ${theme==='light'? 'text-black' : 'text-white'}`} >
+  </h1><div className={`w-full h-full  flex justify-center items-center ${theme==='light'? 'text-black' : 'text-white'}`} >
     <div className='flex flex-col sm:flex-row sm:flex-row-reverse jusitify-center items-center'>
     <div className='flex flex-col  items-center gap-3 mt-20 sm:mt-0 sm:p-30 p-10'>
             <button onClick={toggleTheme} className='relative left-20 w-12  h-12 '>
@@ -43,7 +43,7 @@ const AboutPage = () => {
 
       
                     </p>            </div>
-            <button className={`text-md ${theme==='light' ? 'bg-black' : 'bg-blue-500'} text-white py-2 px-4 rounded-xl`}>Resume</button>
+            <a href='https://ik.imagekit.io/ej9ydxqpz/Resume/Sribalaji%20Resume%20(9).pdf?updatedAt=1747563483442' className={`text-md ${theme==='light' ? 'bg-black' : 'bg-blue-500'} text-white py-2 px-4 rounded-xl`}>Resume</a>
         </div>
        
     </div>

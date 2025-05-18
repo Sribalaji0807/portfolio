@@ -59,26 +59,33 @@ const skillMap = {
 };
 
   return (
-    <div className='w-screen h-screen flex flex-col justify-center items-center mt-10'>
-        <h1 className='text-3xl font-bold mb-4'>Skills</h1>
-       <div className='w-48 flex flex-col justify-center items-center'>
-       {skillArray.map((chunk, index) => (<>
-            <h1 className='text-2xl font-bold'>{chunk}</h1>
-          <div key={index} className="w-1/2 flex flex-row items-center justify-center gap-3">
-            {skillMap[chunk].map((item, i) => (
-              <div key={i} className="w-30 flex flex-col justify-center items-center gap-2 p-4">
-               <img src={item.url} alt={item.name} className=' w-24 object-contain h-13  ' />
-                {/* <TiTickOutline /> */}
-                <p className="text-md text-center font-italic ml-1">{item.name}</p>
-              </div>
-            ))}
-            
-          </div>
-            </>
-        ))}
+  <div className="w-screen h-screen flex flex-col justify-center items-center mt-10 overflow-y-auto p-4">
+  <h1 className="text-3xl font-bold mb-4">Skills</h1>
+  <div className="w-full flex flex-col justify-center items-center gap-6">
+    {skillArray.map((chunk, index) => (
+      <div key={index} className="w-full max-w-5xl flex flex-col items-center mb-4">
+        <h1 className="text-2xl font-bold mb-2">{chunk}</h1>
 
-       </div>
-    </div>
+        <div className="w-full flex flex-wrap justify-center items-center gap-3">
+          {skillMap[chunk].map((item, i) => (
+            <div 
+              key={i} 
+              className="flex flex-col justify-center items-center gap-2 p-2"
+            >
+              <img 
+                src={item.url} 
+                alt={item.name} 
+                className="w-14 h-14 sm:w-18 sm:h-18 object-contain"
+              />
+              <p className="text-sm sm:text-md text-center">{item.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
   )
 }
 
