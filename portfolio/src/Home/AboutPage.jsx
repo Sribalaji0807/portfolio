@@ -22,7 +22,7 @@ const AboutPage = () => {
                 <img src={profile} className='w-[200px] h-[200px] object-cover rounded-full' alt="Sribalaji image" />
             </div>
         </div>
-        <div className='flex flex-col justify-center items-center gap-3'>
+        <div className='mt-0 md:ml-20 flex flex-col justify-center items-center gap-3'>
             <h2 className='text-2xl font-bold'>SRIBALAJI</h2>
             <h3 className='text-md'>Full Stack Developer</h3>
             <div className='flex flex-row gap-3'>
