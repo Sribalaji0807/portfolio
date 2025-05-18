@@ -1,47 +1,67 @@
 import React from 'react'
-import { FaLinkedin } from "react-icons/fa6";
-import { FaGithubSquare } from "react-icons/fa";
-import { MdOutlineWbSunny } from "react-icons/md";
-import { FaRegMoon } from "react-icons/fa";
-import profile from '../assets/profile.jpg';
-import { useThemeContext } from '../Context/ThemeContext';
+import profile from '../assets/image (3).jpg'
+import { useThemeContext } from '../Context/ThemeContext'
+
 const HomePage = () => {
-    const {theme, toggleTheme} = useThemeContext();
+  const { theme } = useThemeContext()
+
   return (
-    <div className={`w-[100vw] h-[100vh] ${theme==='light' ? 'bg-white' : 'bg-black'} `}>
-<div className={`w-full h-full flex justify-center items-center ${theme==='light'? 'text-black' : 'text-white'}`} >
-    <div className='flex flex-col sm:flex-row sm:flex-row-reverse jusitify-center items-center'>
-    <div className='flex flex-col  items-center gap-3 mt-20 sm:mt-0 sm:p-30 p-10'>
-            <button onClick={toggleTheme} className='relative left-20 w-12  h-12 '>
-                {theme==='light'?<MdOutlineWbSunny size={20} />:<FaRegMoon color='white' size={20} />
-            }
-            </button>
-            <div className=''>
-                <img src={profile} className='w-[200px] h-[200px] object-cover rounded-full' alt="Sribalaji image" />
-            </div>
+    <div
+      className={`w-screen h-screen flex flex-col justify-center items-center p-6 relative overflow-hidden ${
+        theme === 'light'
+          ? 'bg-gradient-to-br from-gray-100 to-gray-300'
+          : 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700'
+      }`}
+    >
+      <svg
+        className={`absolute top-10 left-10 w-48 h-48 filter drop-shadow-lg z-0 ${
+          theme === 'light' ? 'text-white opacity-30' : 'text-cyan-400 opacity-20'
+        }`}
+        fill="currentColor"
+        viewBox="0 0 100 100"
+      >
+        <circle cx="50" cy="50" r="50" />
+      </svg>
+
+      <svg
+        className={`absolute bottom-20 right-20 w-64 h-64 filter drop-shadow-2xl z-0 ${
+          theme === 'light' ? 'text-white opacity-25' : 'text-indigo-400 opacity-20'
+        }`}
+        fill="currentColor"
+        viewBox="0 0 100 100"
+      >
+        <rect width="100" height="100" rx="20" ry="20" />
+      </svg>
+
+      <div className="flex md:flex-row justify-between items-center gap-10 w-full max-w-4xl relative z-10">
+        <div
+          className={`text-center md:text-left space-y-2 ${
+            theme === 'light' ? 'text-black' : 'text-white'
+          }`}
+        >
+          <h1 className="text-6xl font-bold transition-transform duration-300 hover:scale-105 rotate-[-5deg]">
+            Hi
+          </h1>
+          <div className="flex items-center space-x-2">
+            <h2 className="text-4xl font-medium transition-transform duration-300 hover:scale-105">
+              I'm
+            </h2>
+            <h3 className="text-4xl font-medium transition-transform duration-300 hover:scale-105">
+              Sribalaji
+            </h3>
+          </div>
+          <p className="text-lg font-medium transition-transform duration-300 hover:scale-105 mt-2">
+            Full Stack Developer
+          </p>
         </div>
-        <div className='flex flex-col justify-center items-center gap-3'>
-            <h1 className='text-3xl font-bold'>SRIBALAJI</h1>
-            <h3 className='text-md'>Full Stack Developer</h3>
-            <div className='flex flex-row gap-3'>
-
-            <FaLinkedin color={`${theme==='light' ? 'black' : 'white'}`} size={20} /> 
-           <a href="https://github.com/Sribalaji0807" target='_blank'>
-            <FaGithubSquare size={20} />
-
-           </a>
-
-            </div>
-            <div >
-                <p className='text-center w-48'>specializing in the MERN stack with strong proficiency in Java. I have experience building scalable web applications</p>
-            </div>
-            <button className={`text-md ${theme==='light' ? 'bg-black' : 'bg-blue-500'} text-white py-2 px-4 rounded-xl`}>Resume</button>
+        <div className="w-1/3 h-auto px-3 sm:z-10 lg:z-0">
+          <img
+            src={profile}
+            alt="Profile"
+            className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+          />
         </div>
-       
-    </div>
-</div>
-
-
+      </div>
     </div>
   )
 }
